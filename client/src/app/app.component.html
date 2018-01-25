@@ -1,4 +1,4 @@
-<input type="file" name="log-file">
+<input type="file" name="log-file" logFileInput (changedLog)="seedData($event)">
 <div fxLayout='row' fxLayout.xs="column" class="container" fxLayoutGap="10px">
   <div fxFlex="50" class="radiant">
     <mat-card class="player-card" *ngFor="let player of radiant; let i = index">

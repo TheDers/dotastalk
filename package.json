@@ -1,21 +1,31 @@
 {
-  "name": "dotastalk",
+  "name": "nest-typescript-starter",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "description": "Nest TypeScript starter repository",
+  "license": "MIT",
+  "main": "index.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "nodemon",
+    "start:watch": "nodemon",
+    "prestart:prod": "tsc",
+    "start:prod": "node dist/main.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "electron-debug": "^1.5.0",
-    "electron-json-storage": "^4.0.2",
-    "find-in-files": "^0.4.0",
-    "node-watch": "^0.5.5"
+    "@nestjs/common": "^4.5.9",
+    "@nestjs/core": "^4.5.10",
+    "@nestjs/microservices": "^4.5.8",
+    "@nestjs/testing": "^4.5.5",
+    "@nestjs/websockets": "^4.5.8",
+    "redis": "^2.7.1",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^5.5.6",
+    "typescript": "^2.6.2",
+    "electron": "1.7.11"
   },
   "devDependencies": {
-    "ts-node": "4.1.0"
+    "@types/node": "^9.3.0",
+    "@types/electron": "1.6.10",
+    "nodemon": "^1.14.1",
+    "ts-node": "^4.1.0"
   }
 }
