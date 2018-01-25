@@ -23,6 +23,7 @@ export class OpenDotaService {
     let rank = [];
     rank[0] = `${RANKS[rankInt[0] - 1]} ${rankInt[1]}`;
     rank[1] = `rank_icon_${rankInt[0]}.png`;
+
     if (rankInt[1] !== '0') {
       rank[2] = `rank_star_${rankInt[1]}.png`;
     } else {
