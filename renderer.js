@@ -3,11 +3,12 @@ const remote = require('electron').remote;
 const ipc = require('electron').ipcRenderer;
 
 document.getElementById("reset").onclick = function() {resetGame()};
+let match = [184041598,25526493,49697106, 34782480, 50909919, 123328198, 136058418, 102597362, 175791687, 215584294];
 
 const RANKS = ["Herald", "Guardian", "Crusader", "Archon", "Legend", "Ancient", "Divine"];
 const NO_AVATAR_IMG = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg";
 
-resetGame();
+cullExtra(match);
 
 function getPlayer(playerID, side){
   var xhr = new XMLHttpRequest();
@@ -82,15 +83,18 @@ function buildPlayer(playerObj, side) {
 
 
 function lobbyPlayers(playerIDs){
+  var count = 0;
   for (var value of playerIDs) {
-    curID= value.substr(7);
-    curID = curID.substr(0, curID.length - 1);
-    curSlot = value.charAt(0);
-    if(curSlot < 5) {
-      getPlayer(curID, "radiant");
+
+    // curID= value.substr(7);
+    // curID = curID.substr(0, curID.length - 1);
+    // curSlot = value.charAt(0);
+    if(count < 5) {
+      getPlayer(value, "radiant");
     } else {
-      getPlayer(curID, "dire");
+      getPlayer(value, "dire");
     }
+    count++
   }
 }
 

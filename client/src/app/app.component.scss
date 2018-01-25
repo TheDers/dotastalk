@@ -1,0 +1,37 @@
+@import '../assets/css/mixins';
+@import '../assets/css/variables';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+:host {
+  display: block;
+}
+
+.radiant {
+
+  background: lightgray;
+  padding: 12px;
+}
+
+.dire {
+
+  background: papayawhip;
+  padding: 12px;
+}
+
+
+.player-card {
+  width: 100%;
+  background-color: #fff;
+}
+
+
+.player-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

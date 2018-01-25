@@ -1,7 +1,8 @@
+After downloading go to `cd client`
+
 `npm i`
 
-`npm run electron`
 
-or
+To run:
 
-`npm run electron:win`
+`npm run build-watch` When finished: `npm run electron`
