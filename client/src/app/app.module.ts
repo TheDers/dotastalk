@@ -10,7 +10,6 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { LogFileModule } from './log-file/module';
 
-
 @NgModule({
   declarations: [
     AppComponent,

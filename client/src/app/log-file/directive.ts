@@ -20,8 +20,6 @@ export class LogFileDirective {
         .splice(3)
         .map(trimToIds);
 
-      console.log(ids);
-      // console.log(lobbyString, 'lobby');
       this.changedLog.emit(ids);
     };
 

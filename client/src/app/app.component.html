@@ -1,17 +1,36 @@
-<input type="file" name="log-file" logFileInput (changedLog)="seedData($event)">
-<div fxLayout='row' fxLayout.xs="column" class="container" fxLayoutGap="10px">
+<button mat-fab color="primary" class="action-fab">
+  <input
+    type="file"
+    name="file-5"
+    id="file-5"
+    logFileInput
+    (changedLog)="seedData($event)"
+    class="inputfile">
+  <label for="file-5"></label>
+  +
+</button>
+
+<section
+    fxLayout='row'
+    fxLayout.xs="column"
+    class="container">
+
   <div fxFlex="50" class="radiant">
+    <h2>Radiant</h2>
     <mat-card class="player-card" *ngFor="let player of radiant; let i = index">
       <mat-card-header>
         <img mat-card-avatar src="{{player.profile.avatar}}">
         <mat-card-title>{{player.profile.personaname}}</mat-card-title>
-        <mat-card-subtitle>{{player.profile.steamid}}</mat-card-subtitle>
+        <mat-card-subtitle>
+          <p>{{ranks[i][0]}} {{player.leaderboard_rank}}</p>
+        </mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content>
-        <img src="./assets/images/rank_icons/{{ranks[i][1]}}">
-        <img src="./assets/images/rank_icons/{{ranks[i][2]}}">
-        <p>{{ranks[i][0]}}</p>
-        <p>{{player.leaderboard_rank}}</p>
+      <mat-card-content fxLayout='row'>
+        <figure fxFlex="25">
+          <img class="badge" src="./assets/images/rank_icons/{{ranks[i][1]}}">
+          <img class="badge-stars" src="./assets/images/rank_icons/{{ranks[i][2]}}">
+        </figure>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequatur dolore quam. A consequatur ducimus et eum fugit harum, illo ipsam iste pariatur quasi quisquam repudiandae sed sunt veritatis vero.</p>
       </mat-card-content>
       <mat-card-actions>
         <a mat-button >Steam Profile</a>
@@ -20,21 +39,27 @@
   </div>
 
   <div fxFlex="50" class="dire">
+    <h2>Dire</h2>
     <mat-card class="player-card" *ngFor="let player of dire; let i = index">
       <mat-card-header>
         <img mat-card-avatar src="{{player.profile.avatar}}">
         <mat-card-title>{{player.profile.personaname}}</mat-card-title>
-        <mat-card-subtitle>{{player.profile.steamid}}</mat-card-subtitle>
+        <mat-card-subtitle>
+          <p>{{ranks[i][0]}} {{player.leaderboard_rank}}</p>
+        </mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content>
-        <img src="./assets/images/rank_icons/{{ranks[i][1]}}">
-        <img src="./assets/images/rank_icons/{{ranks[i][2]}}">
-        <p>{{ranks[i][0]}}</p>
-        <p>{{player.leaderboard_rank}}</p>
+      <mat-card-content fxLayout='row'>
+        <figure fxFlex="25">
+          <img class="badge" src="./assets/images/rank_icons/{{ranks[i][1]}}">
+          <img class="badge-stars" src="./assets/images/rank_icons/{{ranks[i][2]}}">
+        </figure>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequatur dolore quam. A consequatur ducimus et eum fugit harum, illo ipsam iste pariatur quasi quisquam repudiandae sed sunt veritatis vero.</p>
       </mat-card-content>
       <mat-card-actions>
         <a mat-button>Steam Profile</a>
       </mat-card-actions>
     </mat-card>
   </div>
-</div>
+</section>
+
+<div class="bottom-mask-gradient"></div>

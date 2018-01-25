@@ -3,35 +3,161 @@
 
 html,
 body {
+
   height: 100%;
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 :host {
+  background: linear-gradient(to right, transparentize(#c6e9ff, .75), transparentize(#FFAFBD, .75));
   display: block;
+
+}
+
+h2 {
+  font-family: $sans-default-family;
+  margin: 0 0 16px 0;
+  padding: 0 0 16px 0;
+  position: relative;
+
+  &::after {
+    bottom: 0;
+    content: '';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+mat-card-title {
+  text-transform: capitalize;
+}
+
+.bottom-mask-gradient {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  bottom: 0;
+  height: 72px;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  z-index: 8;
 }
 
 .radiant {
-
-  background: lightgray;
   padding: 12px;
+
+  h2 {
+    color: $blue-link;
+    &::after {
+      background-color: $blue-link;
+    }
+  }
+
+  mat-card {
+    background-color: transparentize($blue-link, .75);
+  }
 }
 
 .dire {
-
-  background: papayawhip;
   padding: 12px;
-}
+  h2 {
+    color: $red-mh;
+    &::after {
 
+      background-color: $red-mh;
+    }
+  }
+
+  mat-card {
+    background-color: transparentize($red-mh, .75);
+  }
+}
 
 .player-card {
-  width: 100%;
   background-color: #fff;
+  width: 100%;
 }
 
+mat-card {
+  margin-bottom: 16px;
+}
+
+mat-card-content {
+  min-height: 72px;
+  padding-top: 32px;
+  position: relative;
+}
+
+figure {
+  align-items: center;
+  display: flex;
+  height: 72px;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: -90px;
+  width: 72px;
+
+  img {
+    position: absolute;
+  }
+
+  .badge {
+    height: 72px;
+    top: 0;
+  }
+
+  .badge-stars {
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+  }
+
+  figcaption {
+    bottom: -40%;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    p {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
 
 .player-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+}
+
+.action-fab {
+  bottom: 10%;
+  color: $white;
+  font-size: 24px;
+  position: fixed;
+  right: 5%;
+  z-index: 10;
+}
+
+.inputfile {
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0.1px;
+  z-index: -1;
+}
+
+.inputfile + label {
+  cursor: pointer;
+  display: inline-block;
+  height: 56px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }

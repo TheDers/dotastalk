@@ -49,15 +49,8 @@ export class AppComponent implements OnInit {
           transformedPlayers.push(set(player, 'profile', DEFAULT_PROFILE));
         }
       });
-      console.log(transformedPlayers);
       const data = transformedPlayers;
-      //   .map(player => {
-      //   if(player.profile.avatar) {
-      //     return Object.assign({}, player);
-      //   } else {
-      //     return Object.assign({}, player, player.profile.avatar = '')
-      //   }
-      // });
+      console.log(data);
 
       this.radiant = data.slice(0, 5);
       this.dire = data.slice(5);
