@@ -22,7 +22,7 @@
         <img mat-card-avatar src="{{player.profile.avatar}}">
         <mat-card-title>{{player.profile.personaname}}</mat-card-title>
         <mat-card-subtitle>
-          <p>{{ranks[i][0]}} {{player.leaderboard_rank}}</p>
+          <p>{{ranks[i][0]}} <span *ngIf="player.leaderboard_rank">rank: {{player.leaderboard_rank}}</span></p>
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content fxLayout='row'>
@@ -45,7 +45,7 @@
         <img mat-card-avatar src="{{player.profile.avatar}}">
         <mat-card-title>{{player.profile.personaname}}</mat-card-title>
         <mat-card-subtitle>
-          <p>{{ranks[i][0]}} {{player.leaderboard_rank}}</p>
+          <p>{{ranks[i][0]}}  <span *ngIf="player.leaderboard_rank">rank: {{player.leaderboard_rank}}</span></p>
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content fxLayout='row'>

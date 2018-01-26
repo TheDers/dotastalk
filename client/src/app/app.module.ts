@@ -9,6 +9,8 @@ import { OpenDotaModule } from './open-dota/module';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { LogFileModule } from './log-file/module';
+import { LocalEndpointModule } from './local-endpoints/module';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { LogFileModule } from './log-file/module';
     BrowserModule,
     OpenDotaModule,
     FlexLayoutModule,
+    LocalEndpointModule,
     MatButtonModule,
     MatCardModule,
     LogFileModule,
