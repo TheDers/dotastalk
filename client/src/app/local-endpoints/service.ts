@@ -8,8 +8,7 @@ export class LocalEndpointService {
 
   constructor(private http: HttpClient) {}
 
-  public postData(endPointPath, payload): Observable<any> {
-
-    return this.http.post(`${DOMAIN}${endPointPath}`, 'sadf')
+  public postData(endPointPath): Observable<any> {
+    return this.http.post(`${DOMAIN}${endPointPath}`, {})
   }
 }

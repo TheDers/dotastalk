@@ -23,6 +23,8 @@ export class LogFileDirective {
       this.changedLog.emit(ids);
     };
 
+
+
     reader.readAsText(event.target.files[0]);
   }
 }

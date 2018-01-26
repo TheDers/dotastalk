@@ -27,7 +27,8 @@ export class AppComponent implements OnInit {
   public radiant: any[];
   public ranks: any[];
 
-  constructor(private openDota: OpenDotaService, private localEndpoint: LocalEndpointService) {
+  constructor(private openDota: OpenDotaService,
+              private localEndpoint: LocalEndpointService) {
   }
 
   public ngOnInit(): void {
@@ -35,10 +36,7 @@ export class AppComponent implements OnInit {
       49697106, 49697106, 49697106, 34782480, 50909919, 123328198, 136058418,
       102597362, 175791687, 215584294,
     ]);
-    const parse = JSON.parse('');
-    this.localEndpoint.postData('file', parse).subscribe((x) => {
-      console.log(x);
-    })
+
   }
 
   public seedData(ids) {
